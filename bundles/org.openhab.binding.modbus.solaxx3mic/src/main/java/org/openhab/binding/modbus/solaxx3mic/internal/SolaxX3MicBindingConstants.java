@@ -13,8 +13,8 @@
 package org.openhab.binding.modbus.solaxx3mic.internal;
 
 import org.eclipse.jdt.annotation.NonNullByDefault;
+import org.eclipse.smarthome.core.thing.ThingTypeUID;
 import org.openhab.binding.modbus.ModbusBindingConstants;
-import org.openhab.core.thing.ThingTypeUID;
 
 /**
  * The {@link SolaxX3MicBindingConstants} class defines common constants, which are

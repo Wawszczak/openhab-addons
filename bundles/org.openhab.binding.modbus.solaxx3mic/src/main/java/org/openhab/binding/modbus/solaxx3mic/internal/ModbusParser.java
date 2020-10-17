@@ -15,7 +15,7 @@ package org.openhab.binding.modbus.solaxx3mic.internal;
 import java.util.Optional;
 
 import org.eclipse.jdt.annotation.NonNullByDefault;
-import org.openhab.core.library.types.DecimalType;
+import org.eclipse.smarthome.core.library.types.DecimalType;
 import org.openhab.io.transport.modbus.ModbusBitUtilities;
 import org.openhab.io.transport.modbus.ModbusConstants.ValueType;
 import org.openhab.io.transport.modbus.ModbusRegisterArray;
