@@ -324,6 +324,7 @@ public class SolaxX3MicHandler extends BaseThingHandler {
     protected void handlePolledData(ModbusRegisterArray registers) {
         Thing mything = this.getThing();
         for (Channel localchannel : mything.getChannels()) {
+            logger.debug("Handling Channel with UID = {}", localchannel.getUID());
             SolaxX3MicChannelConfiguration solaxChannelConfig = localchannel.getConfiguration().as(SolaxX3MicChannelConfiguration.class);
             Long value = 0L;
             switch (solaxChannelConfig.registerType) {
