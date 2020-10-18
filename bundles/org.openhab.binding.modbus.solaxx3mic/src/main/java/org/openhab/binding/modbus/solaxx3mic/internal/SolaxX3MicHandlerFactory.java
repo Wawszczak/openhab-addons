@@ -49,7 +49,7 @@ public class SolaxX3MicHandlerFactory extends BaseThingHandlerFactory {
 
     @Override
     public boolean supportsThingType(ThingTypeUID thingTypeUID) {
-        logger.debug("Asked to support {1}", thingTypeUID);
+        logger.debug("Asked to support " + thingTypeUID.getAsString());
         return THING_TYPE_SOLAX_X3_MIC.equals(thingTypeUID);
     }
 
