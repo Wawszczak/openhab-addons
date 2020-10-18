@@ -95,7 +95,7 @@ public class SolaxX3MicHandler extends BaseThingHandler {
     @Override
     public void initialize() {
         config = getConfigAs(SolaxX3MicConfiguration.class);
-        logger.debug("Initializing thing with properties: {}", thing.getProperties());
+        logger.debug("Initializing thing with properties: {} and config {}", thing.getProperties(), config.toString());
 
         startUp();
     }
@@ -126,7 +126,7 @@ public class SolaxX3MicHandler extends BaseThingHandler {
         connectEndpoint();
 
         if (comms == null || config == null) {
-            logger.debug("Invalid endpoint/config/manager ref for sunspec handler");
+            logger.debug("Invalid endpoint/config/manager ref for Solax X3 handler");
             return;
         }
 
@@ -306,7 +306,7 @@ public class SolaxX3MicHandler extends BaseThingHandler {
         logger.debug("Setting up regular polling");
 
         ModbusReadRequestBlueprint request = new ModbusReadRequestBlueprint(getSlaveId(),
-                ModbusReadFunctionCode.READ_MULTIPLE_REGISTERS, mainBlock.address, mainBlock.length, myconfig.maxTries);
+                ModbusReadFunctionCode.READ_INPUT_REGISTERS, mainBlock.address, mainBlock.length, myconfig.maxTries);
 
         long refreshMillis = myconfig.getRefreshMillis();
         pollTask = mycomms.registerRegularPoll(request, refreshMillis, 1000, result -> {
