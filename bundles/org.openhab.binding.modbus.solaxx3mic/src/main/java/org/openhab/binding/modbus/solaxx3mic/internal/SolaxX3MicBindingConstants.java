@@ -28,7 +28,7 @@ public class SolaxX3MicBindingConstants {
     private static final String BINDING_ID = ModbusBindingConstants.BINDING_ID;
 
     // List of all Thing Type UIDs
-    public static final ThingTypeUID THING_TYPE_INVERTER = new ThingTypeUID(BINDING_ID, "inverter-SolaxX3Micu");
+    public static final ThingTypeUID THING_TYPE_SOLAX_X3_MIC = new ThingTypeUID(BINDING_ID, "inverter-Solax-X3-Mic");
 
     // properties
     public static final String PROPERTY_SERIAL_NUMBER = "serialNumber";

@@ -14,8 +14,6 @@ package org.openhab.binding.modbus.solaxx3mic.internal;
 
 import static org.openhab.binding.modbus.solaxx3mic.internal.SolaxX3MicBindingConstants.*;
 
-import java.util.Set;
-
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.smarthome.core.thing.Thing;
@@ -42,18 +40,16 @@ public class SolaxX3MicHandlerFactory extends BaseThingHandlerFactory {
      */
     private final Logger logger = LoggerFactory.getLogger(SolaxX3MicHandlerFactory.class);
 
-    private static final Set<ThingTypeUID> SUPPORTED_THING_TYPES_UIDS = Set.of(THING_TYPE_INVERTER);
-
     @Override
     public boolean supportsThingType(ThingTypeUID thingTypeUID) {
-        return SUPPORTED_THING_TYPES_UIDS.contains(thingTypeUID);
+        return THING_TYPE_SOLAX_X3_MIC.equals(thingTypeUID);
     }
 
     @Override
     protected @Nullable ThingHandler createHandler(Thing thing) {
         ThingTypeUID thingTypeUID = thing.getThingTypeUID();
 
-        if (THING_TYPE_INVERTER.equals(thingTypeUID)) {
+        if (THING_TYPE_SOLAX_X3_MIC.equals(thingTypeUID)) {
             logger.debug("New InverterHandler created");
             return new SolaxX3MicHandler(thing);
         }
