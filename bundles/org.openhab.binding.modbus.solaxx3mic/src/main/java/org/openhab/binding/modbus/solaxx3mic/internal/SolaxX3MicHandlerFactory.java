@@ -21,6 +21,7 @@ import org.eclipse.smarthome.core.thing.ThingTypeUID;
 import org.eclipse.smarthome.core.thing.binding.BaseThingHandlerFactory;
 import org.eclipse.smarthome.core.thing.binding.ThingHandler;
 import org.eclipse.smarthome.core.thing.binding.ThingHandlerFactory;
+import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,7 +42,14 @@ public class SolaxX3MicHandlerFactory extends BaseThingHandlerFactory {
     private final Logger logger = LoggerFactory.getLogger(SolaxX3MicHandlerFactory.class);
 
     @Override
+    protected void activate(ComponentContext componentContext) {
+        logger.debug("Called activate function");
+        super.activate(componentContext);
+    }
+
+    @Override
     public boolean supportsThingType(ThingTypeUID thingTypeUID) {
+        logger.debug("Asked to support {1}", thingTypeUID);
         return THING_TYPE_SOLAX_X3_MIC.equals(thingTypeUID);
     }
 
