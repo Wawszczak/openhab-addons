@@ -49,7 +49,7 @@ public class SolaxX3MicHandlerFactory extends BaseThingHandlerFactory {
 
     @Override
     public boolean supportsThingType(ThingTypeUID thingTypeUID) {
-        logger.debug("Asked to support {0}", thingTypeUID.getAsString());
+        logger.debug("Asked to support {}", thingTypeUID.getAsString());
         return THING_TYPE_SOLAX_X3_MIC.equals(thingTypeUID);
     }
 
@@ -58,7 +58,7 @@ public class SolaxX3MicHandlerFactory extends BaseThingHandlerFactory {
         ThingTypeUID thingTypeUID = thing.getThingTypeUID();
 
         if (THING_TYPE_SOLAX_X3_MIC.equals(thingTypeUID)) {
-            logger.debug("New InverterHandler created");
+            logger.debug("New Solax X3 Mic Handler created");
             return new SolaxX3MicHandler(thing);
         }
 
