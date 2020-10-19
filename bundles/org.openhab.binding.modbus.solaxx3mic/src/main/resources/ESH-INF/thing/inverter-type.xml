@@ -45,7 +45,7 @@
 
 		<representation-property>uniqueAddress</representation-property>
 
-		<config-description-ref uri="thing-type:solaxx3mic:modbusconfig"/>
+		<config-description-ref uri="thing-type:modbus:solaxx3mic-modbusconfig"/>
 
 	</thing-type>
 

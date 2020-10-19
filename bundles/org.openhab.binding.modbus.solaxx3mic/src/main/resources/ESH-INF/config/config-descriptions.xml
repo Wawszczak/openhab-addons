@@ -4,7 +4,7 @@
 	xmlns:config-description="https://openhab.org/schemas/config-description/v1.0.0"
 	xsi:schemaLocation="https://openhab.org/schemas/config-description/v1.0.0 https://openhab.org/schemas/config-description-1.0.0.xsd">
 
-	<config-description uri="thing-type:solaxx3mic:modbusconfig">
+	<config-description uri="thing-type:modbus:solaxx3mic-modbusconfig">
 
 		<parameter name="refresh" type="integer" min="0" unit="s">
 			<label>Refresh Interval</label>
@@ -47,7 +47,7 @@
 
 	</config-description>
 
-	<config-description uri="channel-type:solaxx3mic:channel-config">
+	<config-description uri="channel-type:modbus:solaxx3mic-channel-config">
 
 		<parameter name="registerNumber" type="integer">
 			<label>Modbus Register number</label>
