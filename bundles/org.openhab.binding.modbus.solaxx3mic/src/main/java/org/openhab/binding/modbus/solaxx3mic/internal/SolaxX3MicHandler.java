@@ -443,7 +443,7 @@ public class SolaxX3MicHandler extends BaseThingHandler {
      * @param scaleFactor the scale factor to use (may be negative)
      * @return the scaled value as a DecimalType
      */
-    protected State getScaled(Optional<? extends Number> value, Optional<Short> scaleFactor, Unit<?> unit) {
+    protected State getScaled(Optional<? extends Number> value, Optional<Integer> scaleFactor, Unit<?> unit) {
         if (!value.isPresent() || !scaleFactor.isPresent()) {
             return UnDefType.UNDEF;
         }
@@ -457,7 +457,7 @@ public class SolaxX3MicHandler extends BaseThingHandler {
      * @param scaleFactor the scale factor to use (may be negative)
      * @return the scaled value as a DecimalType
      */
-    protected State getScaled(Optional<? extends Number> value, Short scaleFactor, Unit<?> unit) {
+    protected State getScaled(Optional<? extends Number> value, int scaleFactor, Unit<?> unit) {
         return getScaled(value, Optional.of(scaleFactor), unit);
     }
 
@@ -468,7 +468,7 @@ public class SolaxX3MicHandler extends BaseThingHandler {
      * @param scaleFactor the scale factor to use (may be negative)
      * @return the scaled value as a DecimalType
      */
-    protected State getScaled(Number value, Short scaleFactor, Unit<?> unit) {
+    protected State getScaled(Number value, int scaleFactor, Unit<?> unit) {
         if (scaleFactor == 0) {
             return new QuantityType<>(value.longValue(), unit);
         }
