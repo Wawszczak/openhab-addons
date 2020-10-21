@@ -11,7 +11,7 @@
 		<config-description-ref uri="channel-type:modbus:solaxx3mic-channel-config"/>
 	</channel-type>
 
-	<channel-type id="ac-voltage-to-n-type">
+	<channel-type id="ac-phase-voltage-to-n-type">
 		<item-type>Number:ElectricPotential</item-type>
 		<label>AC Voltage Phase To N Value</label>
 		<description>This phase's AC voltage relative to N line</description>
