@@ -27,5 +27,5 @@ public class SolaxX3MicChannelConfiguration {
     int registerFunction = 3;
     String registerType = "SHORT";
     String registerUnit = "AMPERE";
-    Short registerScaleFactor = -1;
+    int registerScaleFactor = 0;
 }
