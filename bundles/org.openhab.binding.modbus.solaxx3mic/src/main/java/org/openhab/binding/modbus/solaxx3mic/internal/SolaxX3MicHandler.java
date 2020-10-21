@@ -348,7 +348,7 @@ public class SolaxX3MicHandler extends BaseThingHandler {
                     Unit<?> unit = (Unit<?>) field.get(field.getClass());
                     updateState(localchannel.getUID(), getScaled(value, solaxChannelConfig.registerScaleFactor, unit));
                 } catch (NoSuchFieldException ex) {
-                    logger.warn("Incorrectly set up of Channel UUID = ");
+                    logger.warn("Incorrectly set up of Channel UUID = {}, ex = {}", localchannel.getUID(), ex.getMessage());
                 } catch (IllegalAccessException ex) {
                     logger.error("Illegal access exception during reflection to Units!");
                 }
