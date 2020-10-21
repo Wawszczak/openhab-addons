@@ -346,7 +346,9 @@ public class SolaxX3MicHandler extends BaseThingHandler {
                 try {
                     Field field = SmartHomeUnits.class.getDeclaredField(solaxChannelConfig.registerUnit);
                     Unit<?> unit = (Unit<?>) field.get(field.getClass());
-                    updateState(localchannel.getUID(), getScaled(value, solaxChannelConfig.registerScaleFactor, unit));
+                    State s = getScaled(value, solaxChannelConfig.registerScaleFactor, unit);
+                    logger.debug("value of channel is {} (real value = {}, scaleFactor = {}, unit = {}", s.toString(), value, solaxChannelConfig.registerScaleFactor, unit.toString());
+                    updateState(localchannel.getUID(), s);
                 } catch (NoSuchFieldException ex) {
                     logger.warn("Incorrectly set up of Channel UUID = {}, ex = {}", localchannel.getUID(), ex.getMessage());
                 } catch (IllegalAccessException ex) {
