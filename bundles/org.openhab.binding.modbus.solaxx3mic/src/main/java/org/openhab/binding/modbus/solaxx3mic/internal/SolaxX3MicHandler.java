@@ -323,9 +323,9 @@ public class SolaxX3MicHandler extends BaseThingHandler {
      */
     protected void handlePolledData(ModbusRegisterArray registers) {
         Thing mything = this.getThing();
-        logger.debug("Invoked loopback for handling polled data");
+        //logger.debug("Invoked loopback for handling polled data");
         for (Channel localchannel : mything.getChannels()) {
-            logger.debug("Handling Channel with UID = {}", localchannel.getUID());
+            //logger.debug("Handling Channel with UID = {}", localchannel.getUID());
             SolaxX3MicChannelConfiguration solaxChannelConfig = localchannel.getConfiguration().as(SolaxX3MicChannelConfiguration.class);
             Long value = 0L;
             switch (solaxChannelConfig.registerType) {
@@ -347,7 +347,7 @@ public class SolaxX3MicHandler extends BaseThingHandler {
                     Field field = SmartHomeUnits.class.getDeclaredField(solaxChannelConfig.registerUnit);
                     Unit<?> unit = (Unit<?>) field.get(field.getClass());
                     State s = getScaled(value, solaxChannelConfig.registerScaleFactor, unit);
-                    logger.debug("value of channel is {} (real value = {}, scaleFactor = {}, unit = {}", s.toString(), value, solaxChannelConfig.registerScaleFactor, unit.toString());
+                    //logger.debug("value of channel is {} (real value = {}, scaleFactor = {}, unit = {}", s.toString(), value, solaxChannelConfig.registerScaleFactor, unit.toString());
                     updateState(localchannel.getUID(), s);
                 } catch (NoSuchFieldException ex) {
                     logger.warn("Incorrectly set up of Channel UUID = {}, ex = {}", localchannel.getUID(), ex.getMessage());
