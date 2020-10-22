@@ -19,7 +19,7 @@
 		<config-description-ref uri="channel-type:modbus:solaxx3mic-channel-config"/>
 	</channel-type>
 
-	<channel-type id="ac-power-type">
+	<channel-type id="ac-phase-power-type">
 		<item-type>Number:Power</item-type>
 		<label>AC Power Value</label>
 		<state readOnly="true" pattern="%d %unit%"/>
