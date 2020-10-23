@@ -83,7 +83,7 @@ public final class ModbusParser {
      * @return the parsed value or empty if the field is not implemented
      */
     public static Optional<Long> extractOptionalInt32(ModbusRegisterArray raw, int index) {
-        return ModbusBitUtilities.extractStateFromRegisters(raw, index, ValueType.INT32).map(DecimalType::longValue);
+        return ModbusBitUtilities.extractStateFromRegisters(raw, index, ValueType.INT32_SWAP).map(DecimalType::longValue);
     }
 
     /**
