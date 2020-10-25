@@ -330,7 +330,10 @@ public class SolaxX3MicHandler extends BaseThingHandler {
             Long value = 0L;
             switch (solaxChannelConfig.registerType) {
                 case "INT":
-                    value = ModbusParser.extractInt32(registers, solaxChannelConfig.registerNumber, 0);
+                    value = ModbusParser.extractInt32(registers, solaxChannelConfig.registerNumber, true, 0);
+                    break;
+                case "INT_BIGENDIAN":
+                    value = ModbusParser.extractInt32(registers, solaxChannelConfig.registerNumber, false, 0);
                     break;
                 case "SHORT":
                     value = (long) ModbusParser.extractInt16(registers, solaxChannelConfig.registerNumber, (short) 0);

@@ -68,6 +68,7 @@
 				<option value="SHORT">Short 16 bit</option>
 				<option value="USHORT">Unsigned Short 16 bit</option>
 				<option value="INT">Integer 32 bit</option>
+				<option value="INT_BIGENDIAN">Integer 32 bit with big endian</option>
 			</options>
 			<limitToOptions>true</limitToOptions>
 			<default>SHORT</default>
